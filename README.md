@@ -1,6 +1,6 @@
-# Jarkom-Modul-3-A16-2021
+# Jarkom-Modul-3-E15-2021
 Lapres Praktikum Jarkom Modul 3  
-kelompok A16 : Deka Julian Arrizki  
+kelompok E15 : M. Iqbal Abdi 
 
 ## **Konten**
 * [**Cara Pengerjaan**](#cara-pengerjaan)
