@@ -103,12 +103,12 @@ option domain-name-servers 192.207.2.2;
 ```
 ### Nomor 6
 Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch1 selama 6 menit sedangkan pada client yang melalui Switch3 selama 12 menit. Dengan waktu maksimal yang dialokasikan untuk peminjaman alamat IP selama 120 menit.
-* Buka ```/etc/dhcp/dhcpd.conf``` dan tambahkan konfigurasi berikut pada network 10.7.1.0
+* Buka ```/etc/dhcp/dhcpd.conf``` dan tambahkan konfigurasi berikut pada network 192.207.1.0
 ```
     default-lease-time 360;
     max-lease-time 7200;
 ```
-* Buka ```/etc/dhcp/dhcpd.conf``` dan tambahkan konfigurasi berikut pada network 10.7.3.0
+* Buka ```/etc/dhcp/dhcpd.conf``` dan tambahkan konfigurasi berikut pada network 192.207.3.0
 ```
     default-lease-time 720;
     max-lease-time 7200;
@@ -137,7 +137,7 @@ zone "jualbelikapal.e15.com" {
     file "/etc/bind/jarkom/jualbelikapal.e15.com";
 };
 ```
-* Tambahkan konfigurasi DNS jualbelikapal.A16.com pada ```/etc/bind/jarkom/jualbelikapal.e15.com```
+* Tambahkan konfigurasi DNS jualbelikapal.e15.com pada ```/etc/bind/jarkom/jualbelikapal.e15.com```
 ```
 ;
 ; BIND data file for local loopback interface
@@ -217,10 +217,10 @@ Saatnya berlayar! Luffy dan Zoro akhirnya memutuskan untuk berlayar untuk mencar
 ```
 zone "super.franky.e15.com" {
     type master;
-    file "/etc/bind/jarkom/super.franky.A16.com";
+    file "/etc/bind/jarkom/super.franky.e15.com";
 };
 ```
-* Tambahkan konfigurasi DNS super.franky.A16.com pada ```/etc/bind/jarkom/super.franky.e15.com```
+* Tambahkan konfigurasi DNS super.franky.e15.com pada ```/etc/bind/jarkom/super.franky.e15.com```
 ```
 ;
 ; BIND data file for local loopback interface
@@ -296,13 +296,13 @@ delay_access 1 deny all
 ```
 date -s "20 Nov 2021 01:00:00"
 ```
-* akses super.franky.A16.com  
+* akses super.franky.e15.com  
 ![image](https://user-images.githubusercontent.com/55046884/141449041-6ad815bd-f724-46d6-a03c-7689d31d5622.png)
 * Setting waktu yang tidak diperbolehkan akses
 ```
 date -s "12 Nov 2021 12:00:00"
 ```
-* akses super.franky.A16.com  
+* akses super.franky.e15.com  
 ![image](https://user-images.githubusercontent.com/55046884/141449253-c740e5fa-6771-4911-a003-12bed4c72160.png)
 
 ### Bandwitdh
@@ -312,7 +312,7 @@ date -s "12 Nov 2021 12:00:00"
 * download bukanfrankytapirandom.99689  
 ![image](https://user-images.githubusercontent.com/55046884/141450191-0ce3eb41-aa76-42f0-b7c6-d8508d2ae837.png)
 
-* User : zorobelikapalA16
+* User : zorobelikapale15
 * download eyeoffranky.jpg  
 ![image](https://user-images.githubusercontent.com/55046884/141450496-4a379018-801b-4ef4-ae36-e891b7864ce0.png)
 
