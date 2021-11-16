@@ -1,8 +1,8 @@
 # Jarkom-Modul-3-E15-2021
 Lapres Praktikum Jarkom Modul 3  
-kelompok E15 : M. Iqbal Abdi 
+Kelompok E15 : M. Iqbal Abdi 
 
-## **Konten**
+## **Daftar Isi**
 * [**Cara Pengerjaan**](#cara-pengerjaan)
 * [**Hasil Akhir**](#hasil-akhir)
 * [**Catatan**](#catatan)
@@ -51,8 +51,8 @@ service isc-dhcp-relay start
 ```
 * Pasang DHCP Relay ```/etc/default/isc-dhcp-relay```
 ```
-SERVERS="10.7.2.4"
-INTERFACES="eth1 eth2 eth3"
+SERVERS="192.207.2.4"
+INTERFACES=""
 OPTIONS=
 ```
 * Pasang IPV4 forward agar bisa menerima network lain ```/etc/sysctl.conf```
@@ -66,21 +66,21 @@ Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix
 
 * Konfigurasi IP Range DHCP untuk switch 1
 ```
-subnet 10.7.1.0 netmask 255.255.255.0 {
-    range 10.7.1.20 10.7.1.99;
-    range 10.7.1.150 10.7.1.169;
-    option routers 10.7.1.1;
-    option broadcast-address 10.7.1.255;
+subnet 192.207.1.0 netmask 255.255.255.0 {
+    range 192.207.1.20 10.7.1.99;
+    range 192.207.1.150 10.7.1.169;
+    option routers 192.207.1.1;
+    option broadcast-address 192.207.1.255;
 }
 ```
 ### Nomor 4
 Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix IP].3.50
 * Konfigurasi IP Range DHCP untuk switch 3
 ```
-subnet 10.7.3.0 netmask 255.255.255.0 {
-    range 10.7.3.30 10.7.3.50;
-    option routers 10.7.3.1;
-    option broadcast-address 10.7.3.255;
+subnet 192.207.3.0 netmask 255.255.255.0 {
+    range 192.207.3.30 10.7.3.50;
+    option routers 192.207.3.1;
+    option broadcast-address 192.207.3.255;
 }
 ```
 ### Nomor 5
@@ -98,9 +98,9 @@ options {
         listen-on-v6 { any; };
 };
 ```
-* Tambahkan konfigurasi pada ```/etc/dhcp/dhcpd.conf``` pada network 10.7.1.0 dan 10.7.3.0
+* Tambahkan konfigurasi pada ```/etc/dhcp/dhcpd.conf``` pada network 192.207.1.0 dan 192.207.3.0
 ```
-option domain-name-servers 10.7.2.2;
+option domain-name-servers 192.207.2.2;
 ```
 ### Nomor 6
 Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch1 selama 6 menit sedangkan pada client yang melalui Switch3 selama 12 menit. Dengan waktu maksimal yang dialokasikan untuk peminjaman alamat IP selama 120 menit.
@@ -120,66 +120,66 @@ Luffy dan Zoro berencana menjadikan Skypie sebagai server untuk jual beli kapal 
 ```
 auto eth0
 iface eth0 inet dhcp
-hwaddress ether 52:69:bd:d1:b5:14
+hwaddress ether c6:49:b5:db:d7:21
 ```
 * Kemudian tambahakan konfigurasi pada ```/etc/dhcp/dhcpd.conf``` di Jipangu
 ```
 host Skypie {
-    hardware ethernet 52:69:bd:d1:b5:14;
-    fixed-address 10.7.3.69;
+    hardware ethernet c6:49:b5:db:d7:21;
+    fixed-address 192.207.3.69;
 }
 ```
 ### Nomor 8
 Loguetown digunakan sebagai client Proxy agar transaksi jual beli dapat terjamin keamanannya, juga untuk mencegah kebocoran data transaksi. Pada Loguetown, proxy harus bisa diakses dengan nama jualbelikapal.yyy.com dengan port yang digunakan adalah 5000
 * Buat konfigurasi hosts pada enieslobby ```/etc/bind/named.conf.local```
 ```
-zone "jualbelikapal.A16.com" {
+zone "jualbelikapal.e15.com" {
     type master;
-    file "/etc/bind/jarkom/jualbelikapal.A16.com";
+    file "/etc/bind/jarkom/jualbelikapal.e15.com";
 };
 ```
-* Tambahkan konfigurasi DNS jualbelikapal.A16.com pada ```/etc/bind/jarkom/jualbelikapal.A16.com```
+* Tambahkan konfigurasi DNS jualbelikapal.A16.com pada ```/etc/bind/jarkom/jualbelikapal.e15.com```
 ```
 ;
 ; BIND data file for local loopback interface
 ;
 $TTL    604800
-@       IN      SOA     jualbelikapal.A16.com. root.jualbelikapal.A16.com. (
+@       IN      SOA     jualbelikapal.e15.com. root.jualbelikapal.e15.com. (
                         2021110701      ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-@                       IN      NS      jualbelikapal.A16.com.
-@                       IN      A       10.7.2.3        ; IP Water7
+@                       IN      NS      jualbelikapal.e15.com.
+@                       IN      A       192.207.2.3        ; IP Water7
 ```
 * Konfigurasi pada ```/etc/squid/squid.conf``` di Water7
 ```
 http_port 5000
-visible_hostname jualbelikapal.A16.com
+visible_hostname jualbelikapal.e15.com
 ```
 * Pasang proxy pada loguetown
 ```
-export http_proxy="http://jualbelikapal.A16.com:5000"
+export http_proxy="http://jualbelikapal.e15.com:5000"
 ```
 * Tambahkan hosts pada water7 di ```/etc/hosts``` untuk memastikan bahwa proxy menuju ke ip yang benar
 ```
-10.7.2.3        jualbelikapal.A16.com
+192.207.2.3        jualbelikapal.e15.com
 ```
 ### Nomor 9
 Agar transaksi jual beli lebih aman dan pengguna website ada dua orang, proxy dipasang autentikasi user proxy dengan enkripsi MD5 dengan dua username, yaitu luffybelikapalyyy dengan password luffy_yyy dan zorobelikapalyyy dengan password zoro_yyy
 * Buat username dan password
 ```
-htpasswd -c -b /etc/squid/passwd luffybelikapalA16 luffy_A16
-htpasswd -b /etc/squid/passwd zorobelikapalA16 zoro_A16
+htpasswd -c -b /etc/squid/passwd luffybelikapale15 luffy_e15
+htpasswd -b /etc/squid/passwd zorobelikapale15 zoro_e15
 ```
 * Tambahkan konfigurasi pada ```/etc/squid/squid.conf``` di Water7
 ```
 http_port 5000
-visible_hostname jualbelikapal.A16.com
+visible_hostname jualbelikapal.e15.com
 auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwd
-auth_param basic realm AmpunBangJago
+auth_param basic realm Proxy
 auth_param basic casesensitive on
 acl USERS proxy_auth REQUIRED
 http_access allow USERS
@@ -196,7 +196,7 @@ acl AVAILABLE_WORKING time A 00:00-03:00
 ```
 include /etc/squid/acl.conf
 http_port 5000
-visible_hostname jualbelikapal.A16.com
+visible_hostname jualbelikapal.e15.com
 auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwd
 auth_param basic realm Proxy
 auth_param basic casesensitive on
@@ -208,60 +208,57 @@ Agar transaksi bisa lebih fokus berjalan, maka dilakukan redirect website agar m
 
 * Tambahkan konfigurasi pada ```/etc/squid/squid.conf``` di Water7
 ```
-acl BLKSite dstdomain google.com
-http_access deny BLKSite
-deny_info http://super.franky.A16.com BLKSite
+acl redirect_from dstdomain google.com
+http_access deny redirect_from
+deny_info http://super.franky.e15.com redirect_from
 ```
 ### Nomor 12
 Saatnya berlayar! Luffy dan Zoro akhirnya memutuskan untuk berlayar untuk mencari harta karun di super.franky.yyy.com. Tugas pencarian dibagi menjadi dua misi, Luffy bertugas untuk mendapatkan gambar (.png, .jpg), sedangkan Zoro mendapatkan sisanya. Karena Luffy orangnya sangat teliti untuk mencari harta karun, ketika ia berhasil mendapatkan gambar, ia mendapatkan gambar dan melihatnya dengan kecepatan 10 kbps
 * Buat konfigurasi hosts pada enieslobby ```/etc/bind/named.conf.local```
 ```
-zone "super.franky.A16.com" {
+zone "super.franky.e15.com" {
     type master;
     file "/etc/bind/jarkom/super.franky.A16.com";
 };
 ```
-* Tambahkan konfigurasi DNS super.franky.A16.com pada ```/etc/bind/jarkom/super.franky.A16.com```
+* Tambahkan konfigurasi DNS super.franky.A16.com pada ```/etc/bind/jarkom/super.franky.e15.com```
 ```
 ;
 ; BIND data file for local loopback interface
 ;
 $TTL    604800
-@       IN      SOA     super.franky.A16.com. root.super.franky.A16.com. (
+@       IN      SOA     super.franky.e15.com. root.super.franky.e15.com. (
                         2021110701      ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-@                       IN      NS      super.franky.A16.com.
-@                       IN      A       10.7.3.69        ; IP Skypie
+@                       IN      NS      super.franky.e15.com.
+@                       IN      A       192.207.3.69        ; IP Skypie
 ```
 * Setting web server skypie pada ```/etc/apache2/sites-available/000-default.conf```
 ```
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
-        DocumentRoot /var/www/super.franky.A16.com
-        ServerName super.franky.A16.com
-        
-        ErrorLog ${APACHE_LOG_DIR}/error.log
-        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        DocumentRoot /var/www/super.franky.e15.com
+        ServerName super.franky.e15.com
 </VirtualHost>
 ```
 * Tambahkan hosts pada water7 di ```/etc/hosts``` untuk memastikan bahwa proxy menuju ke ip yang benar
 ```
-10.7.3.69       super.franky.A16.com
+192.207.3.69       super.franky.e15.com
 ```
 * Buat konfigurasi pada ```/etc/squid/acl-bandwidth.conf```
 ```
 auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwd
-acl GETImage url_regex -i \.jpg$ \.png$
-acl luffy proxy_auth luffybelikapalA16
-acl zoro proxy_auth zorobelikapalA16
+acl IMAGE url_regex -i \.jpg$ \.png$
+acl luffy proxy_auth luffybelikapale15
+acl zoro proxy_auth zorobelikapale15
 delay_pools 1
 delay_class 1 1
 delay_parameters 1 1250/1250
-delay_access 1 allow GETImage luffy
+delay_access 1 allow IMAGE luffy
 ```
 ### Nomor 13
 Sedangkan, Zoro yang sangat bersemangat untuk mencari harta karun, sehingga kecepatan kapal Zoro tidak dibatasi ketika sudah mendapatkan harta yang diinginkannya
