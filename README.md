@@ -321,4 +321,4 @@ date -s "12 Nov 2021 12:00:00"
 
 
 ## Kendala
-1. Kendala lebih ke VMWarenya seperti catatan diatas
+1. Agak bingung saat memahami soal nomor 13
