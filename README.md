@@ -5,7 +5,6 @@ Kelompok E15 : M. Iqbal Abdi
 ## **Daftar Isi**
 * [**Cara Pengerjaan**](#cara-pengerjaan)
 * [**Hasil Akhir**](#hasil-akhir)
-* [**Catatan**](#catatan)
 * [**Kendala**](#kendala)
 
 
@@ -323,10 +322,6 @@ date -s "12 Nov 2021 12:00:00"
 * download bukanfrankytapirandom.99689  
 ![image](https://user-images.githubusercontent.com/55046884/141450551-c2b1e0ca-35d2-4a1f-97e2-8e1a0ae0a7fc.png)
 
-## Catatan
-1. Jangan lupa restart gan
-2. Kalau menggunakan VMWare harus di power off, jika di suspend akan bermasalah pada NAT nya
-3. Kalau menggunakan VMWare jika date disetting ke hari sebelumnya dari jadwal default maka akan ke restart otomatis dalam rentang waktu 30s
 
 ## Kendala
 1. Kendala lebih ke VMWarenya seperti catatan diatas
