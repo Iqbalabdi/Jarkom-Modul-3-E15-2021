@@ -67,8 +67,8 @@ Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix
 * Konfigurasi IP Range DHCP untuk switch 1
 ```
 subnet 192.207.1.0 netmask 255.255.255.0 {
-    range 192.207.1.20 10.7.1.99;
-    range 192.207.1.150 10.7.1.169;
+    range 192.207.1.20 192.207.1.99;
+    range 192.207.1.150 192.207.1.169;
     option routers 192.207.1.1;
     option broadcast-address 192.207.1.255;
 }
@@ -78,7 +78,7 @@ Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix
 * Konfigurasi IP Range DHCP untuk switch 3
 ```
 subnet 192.207.3.0 netmask 255.255.255.0 {
-    range 192.207.3.30 10.7.3.50;
+    range 192.207.3.30 192.207.3.50;
     option routers 192.207.3.1;
     option broadcast-address 192.207.3.255;
 }
