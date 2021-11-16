@@ -267,16 +267,16 @@ delay_access 1 deny all
 ```
 ## Hasil Akhir
 ### IP masing-masing client
-* Loguetown
+* Loguetown  
 ![image](https://user-images.githubusercontent.com/75016595/141876857-03193a8f-a8e3-4e83-b116-ee53ef930218.png)
 
-* Alabasta
+* Alabasta  
 ![image](https://user-images.githubusercontent.com/75016595/141876886-7ef7dbab-c776-4156-b4fc-6142a8d29d59.png)
 
-* Skypie
+* Skypie  
 ![image](https://user-images.githubusercontent.com/75016595/141876923-5623c9e5-31fb-4f14-ba13-3126a7649120.png)
 
-### Proxy
+### Proxy  
 * ```lynx jualbelikapal.e15.com```  
 ![image](https://user-images.githubusercontent.com/55046884/141448639-c4213fee-8855-46a3-9d6e-3657122438f7.png)
 
