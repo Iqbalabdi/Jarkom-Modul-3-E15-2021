@@ -268,19 +268,16 @@ delay_access 1 deny all
 ## Hasil Akhir
 ### IP masing-masing client
 * Loguetown
-![image](https://user-images.githubusercontent.com/55046884/141448320-eea17571-4591-4670-ace4-1966003c35fb.png)
+![image](https://user-images.githubusercontent.com/75016595/141876857-03193a8f-a8e3-4e83-b116-ee53ef930218.png)
 
 * Alabasta
-![image](https://user-images.githubusercontent.com/55046884/141448374-45a400f8-d871-4cb8-8f55-b0d9b467c501.png)
-
-* Tottoland
-![image](https://user-images.githubusercontent.com/55046884/141448428-f0a6ab3a-07c1-4dc0-a2b5-d5dd70ebed75.png)
+![image](https://user-images.githubusercontent.com/75016595/141876886-7ef7dbab-c776-4156-b4fc-6142a8d29d59.png)
 
 * Skypie
-![image](https://user-images.githubusercontent.com/55046884/141448476-914496af-d772-45cc-acbe-0bb57265cfdc.png)
+![image](https://user-images.githubusercontent.com/75016595/141876923-5623c9e5-31fb-4f14-ba13-3126a7649120.png)
 
 ### Proxy
-* ```lynx jualbelikapal.A16.com```  
+* ```lynx jualbelikapal.e15.com```  
 ![image](https://user-images.githubusercontent.com/55046884/141448639-c4213fee-8855-46a3-9d6e-3657122438f7.png)
 
 ### Google.com
@@ -288,10 +285,10 @@ delay_access 1 deny all
 ![image](https://user-images.githubusercontent.com/55046884/141449665-431e4f07-6fd5-4e32-9d7f-05cbeabd91a2.png)
 
 ### Username & Password
-* username : luffybelikapalA16 pass : luffy_A16  
+* username : luffybelikapale15 pass : luffy_e15  
 ![image](https://user-images.githubusercontent.com/55046884/141449554-20179391-e74b-41ac-bd98-4f12ff2a3467.png)
 
-* username : luffybelikapalA16 pass : luffy_A20  
+* username : luffybelikapale15 pass : luffy_e15  
 ![image](https://user-images.githubusercontent.com/55046884/141449595-3cf635d1-52cf-4114-8d93-48c4606f1f67.png)
 
 ### Akses Waktu
@@ -309,7 +306,7 @@ date -s "12 Nov 2021 12:00:00"
 ![image](https://user-images.githubusercontent.com/55046884/141449253-c740e5fa-6771-4911-a003-12bed4c72160.png)
 
 ### Bandwitdh
-* User : luffybelikapalA16
+* User : luffybelikapale15  
 * download eyeoffranky.jpg  
 ![image](https://user-images.githubusercontent.com/55046884/141450128-6127fc81-36dc-461b-9991-b5cc8a64b63f.png)
 * download bukanfrankytapirandom.99689  
