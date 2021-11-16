@@ -278,11 +278,11 @@ delay_access 1 deny all
 
 ### Proxy  
 * ```lynx jualbelikapal.e15.com```  
-![image](https://user-images.githubusercontent.com/55046884/141448639-c4213fee-8855-46a3-9d6e-3657122438f7.png)
+![image](https://user-images.githubusercontent.com/75016595/141877847-ebcb6ae4-af56-4b6d-9ef2-6ec182dc4d32.png)
 
 ### Google.com
 * ```lynx google.com```  
-![image](https://user-images.githubusercontent.com/55046884/141449665-431e4f07-6fd5-4e32-9d7f-05cbeabd91a2.png)
+![image](https://user-images.githubusercontent.com/75016595/141877870-86ad2434-f6f8-4aaa-ad3c-949554c3a58b.png)
 
 ### Username & Password
 * username : luffybelikapale15 pass : luffy_e15  
@@ -314,7 +314,7 @@ date -s "12 Nov 2021 12:00:00"
 
 * User : zorobelikapale15
 * download eyeoffranky.jpg  
-![image](https://user-images.githubusercontent.com/55046884/141450496-4a379018-801b-4ef4-ae36-e891b7864ce0.png)
+![image](https://user-images.githubusercontent.com/75016595/141877896-9ec34cd1-68ff-4baf-af80-29b01b612057.png)
 
 * download bukanfrankytapirandom.99689  
 ![image](https://user-images.githubusercontent.com/55046884/141450551-c2b1e0ca-35d2-4a1f-97e2-8e1a0ae0a7fc.png)
